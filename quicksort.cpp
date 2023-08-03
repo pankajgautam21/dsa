@@ -10,18 +10,17 @@ int partition(int arr[], int s, int e)
             count++;
     }
     int pivot = s + count;
-    // cout<<"pivot"<<pivot<<endl;
     swap(arr[pivot], arr[s]);
     int i = s;
     int j = e;
     // ab right aur left wala part sambhalo
     while (i < j && (i < pivot && j > pivot))
     {
-        while (arr[i] < arr[pivot]) //&& i<pivot)
+        while (arr[i] < arr[pivot]) 
         {
             i++;
         }
-        while (arr[j] > arr[pivot]) //&& j>pivot)
+        while (arr[j] > arr[pivot]) 
         {
             j--;
         }
@@ -34,7 +33,6 @@ void quicksort(int arr[], int s, int e)
     if (s >= e)
         return;
     int p = partition(arr, s, e);
-    //  cout<<p<<" ";
     // right wala part
     quicksort(arr, s, p - 1);
     // left wala part
